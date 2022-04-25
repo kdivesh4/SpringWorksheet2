@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+ 
+<!-- using setter injection -->
+<!--
+ <bean class="com.springcore.worksheet2.Address" name="add" p:street="First Street" p:pincode="110018"/>
+ <bean class="com.springcore.worksheet2.Student" name="student" p:add-ref="a" />
+ --> 
+
+<!-- using autowire "byName" - inject using name reference, use setter injection  -->
+<!--
+ <bean class="com.springcore.worksheet2.Address" name="add" p:street="First Street" p:pincode="110018"/>
+ <bean class="com.springcore.worksheet2.Student" name="student"  autowire="byName" />
+--> 
+
+<!-- using autowire "byType" - inject using Address class Type, use setter injection -->
+<!--
+ <bean class="com.springcore.worksheet2.Address" name="add" p:street="First Street" p:pincode="110018"/>
+ <bean class="com.springcore.worksheet2.Student" name="student"  autowire="byType" />
+-->
+
+<!-- using autowire "constructor" - inject by matching the constructor -->
+<!--  
+ <bean class="com.springcore.worksheet2.Address" name="add" p:street="First Street" p:pincode="110018"/>
+ <bean class="com.springcore.worksheet2.Student" name="student"  autowire="constructor" />
+-->
+
+ <context:annotation-config/>
+ <bean class="com.springcore.worksheet2.Address" name="add" p:street="First Street" p:pincode="110018"/>
+  <bean class="com.springcore.worksheet2.Address" name="add2" p:street="Second Street" p:pincode="110064"/>
+ <bean class="com.springcore.worksheet2.Student" name="student"  />
+
+  </beans>
